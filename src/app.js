@@ -4,6 +4,7 @@ require("dotenv").config();
 
 //Route imports
 const authRoutes = require("./routes/auth.routes");
+const postRoutes = require("./routes/post.routes");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,6 +15,8 @@ app.use(express.json()); // Allows us to parse JSON bodies in requests
 
 //Routes setup
 app.use("/api/auth", authRoutes);
+app.use("/api/posts", postRoutes);
+
 
 //Simple testing route
 app.get("/health", (req, res) => {
