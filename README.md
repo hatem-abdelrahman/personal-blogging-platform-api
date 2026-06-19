@@ -39,7 +39,7 @@ For a blogging platform, the data is inherently relational:
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/hatem-abdelrahman/personal-blogging-platform-api.git
 cd personal-blogging-platform-api
 ```
 
