@@ -26,7 +26,10 @@ app.get("/health", (req, res) => {
 // Centralized Error Handler
 app.use(errorHandler);
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Only start the server listener if running locally (not in serverless/production environment)
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+module.exports = app;
